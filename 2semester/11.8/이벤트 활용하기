@@ -1,0 +1,17 @@
+<!--(예제 10-1) 이벤트 활용하기-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document Object Model</title>
+        <script>
+            window.onload = function(){
+                document.querySelector('h1').style.backgroundColor = 'red';
+                document.querySelector('h2').style.color = 'red';
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Process - 1</h1>
+        <h2>Process - 2</h2>
+    </body>
+</html>
