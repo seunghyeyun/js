@@ -1,0 +1,63 @@
+<!--(예제 12-3) 문서 객체 생성하기(1)-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery Create</title>
+        <script src="https://code.jquery-3.4.1.js"></script>
+        <script>
+            //이벤트를 연결합니다.
+            $(document).ready(function(){
+                //문서 객체를 생성합니다.
+                $('<h1>Create Document Object BY jQUery</h1>')
+            });
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
+
+
+<!--(예제 12-3) appendTo()메서드를 사용한 문서 객체 추가하기(2)-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery DOM</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script>
+            //이벤트를 연결합니다.
+            $(document).ready(function(){
+                //10회 반복합니다.
+                for (var i = 0; i < 10; i++){
+                    //문서 객체를 생성합니다.
+                    $('<h1>Create Document Object+' + i + '</h1>').css({
+                        backgroundColor:'black',
+                        color:'red'
+                    }).appendTo('body');
+                }
+            });
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
+
+
+<!--(예제 12-3) append()메서드를 사용한 문서 객체 추가하기(3)-->
+<!DOCTYPE html>
+<script>
+    //이벤트를 연결합니다.
+    $(document).ready(function(){
+        //10회 반복합니다.
+        for (var i = 0; i<10; i++){
+            //문서를 생성합니다.
+            var $dynamic = $('<h1>Create Document Object +'+i+'</h1>').css({
+                backgroundColor:'black',
+                color:'red'
+            });
+            //문서 객체를 추가합니다.
+            $('body').append($dynamic);
+        }
+    });
+</script>
