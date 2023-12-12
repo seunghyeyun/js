@@ -1,8 +1,10 @@
-<!-- 코드 14-1 -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML5 with Hanbit</title>
+
     <!--초기화-->
     <style>
         * { margin:0; padding: 0;
@@ -172,7 +174,7 @@
             float: left;
         }
 
-        .parer-text {
+        .paper-text {
             float: left;
             width: 150px;
             margin-left: 10px;
@@ -228,58 +230,43 @@
             text-align: center;
         }
     </style>
-    <script src="https://code.jquery.com/aquery=3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://masonry.min.js"></script>
     <script src="https://jquery.imagesloaded.min.js"></script>
     <script>
-        //페이지
-        $(document).ready (function () {
-            //이미지 로드 확인
-            $('#main-section'). imagesLoaded (function () {
-                //jouery Masonry 플러그인 적용
+        $(document).ready(function () {
+            $('#main-section').imagesLoaded(function () {
                 $('#main-section').masonry({
-                    itemSelector: '.paper', 
-                    columnwidth: 230, 
+                    itemSelector: '.paper',
+                    columnWidth: 230,
                     isAnimated: true
                 });
             });
         });
-        // 라이트박스
-        $(document).ready (function () {
+
+        $(document).ready(function () {
             function showLightBox() {
-                //라이트박스를 보이게 합니다.
                 $('#darken-background').show();
                 $('#darken-background').css('top', $(window).scrollTop());
-                //스크롤을 못하게 합니다.
-                $('body').css('overflow','hidden');
+                $('body').css('overflow', 'hidden');
             }
 
             function hideLightBox() {
-                //라이트박스를 보이지 않게 합니다
                 $('#darken-background').hide();
-
-                //스크톱을 하게 합니다
-                $('body').css('overflow','');
+                $('body').css('overflow', '');
             }
 
-            //라이트박스 제거 이벤트
             $('#darken-background').click(function () {
                 hideLightBox();
             });
-            //클릭 이벤트 연결
-            $('.paper').click(function () { showLightBox(); });
 
-            //라이트박스 제거 이벤트 보조
-            $('#lightbox').click(function(event) {
-                event.stopPropagation()
+            $('.paper').click(function () {
+                showLightBox();
             });
-        });
-        //클릭 이벤트 연결
-        $(' paper'). click(function () { showlightBox(); });
 
-        //라이트박스 제거 이벤트 보조
-        $('#lightbox').click(function (event) {
-            event.stopPropagation()
+            $('#lightbox').click(function (event) {
+                event.stopPropagation();
+            });
         });
     </script>
 </head>
@@ -330,40 +317,40 @@
             <li><a href="#">Gift</a></li>
         </ul>
     </nav>
-<!--본문 영역-->
-<section id="main-section">
-    <div class="paper">
-        <div class="paper-holder">
-            <a><img width="190" src="https://placehold.it/190x306"></a>
-        </div>
-        <p class="paper-description">Lorem ipsum dolor sit amet</p>
-        <div class="paper-content">
-            <a class="paper-link" href="#">
-                <img src="https://placehold.it/190x100">
-            </a>
-            <p class="paper-text">Lorem ipsum dolor sit amet</p>
-        </div>
-    </div>
-    <!--생략-->
-    <div class="paper">
-        <!--생략(위의 paper 클래스들의 반복)-->
-    </div>
-</section>
-<!--라이트박스-->
-<div id="darken-background">
-    <div id="lightbox">
-        <div class="user-information">
-            <a class="user-information-image" href="#">
-                <img src="https://placehold.it/70x70">
-            </a>
-            <div class="user-information-text">
-                <h3>User</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
+    <!--본문 영역-->
+    <section id="main-section">
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="190" src="https://placehold.it/190x306"></a>
+            </div>
+            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="https://placehold.it/190x100">
+                </a>
+                <p class="paper-text">Lorem ipsum dolor sit amet</p>
             </div>
         </div>
+        <!--생략-->
+        <div class="paper">
+            <!--생략(위의 paper 클래스들의 반복)-->
+        </div>
+    </section>
+    <!--라이트박스-->
+    <div id="darken-background">
+        <div id="lightbox">
+            <div class="user-information">
+                <a class="user-information-image" href="#">
+                    <img src="https://placehold.it/70x70">
+                </a>
+                <div class="user-information-text">
+                    <h3>User</h3>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
             <hr class="lightbox-splitter">
             <img src="http://placehold.it/6000x750">
+        </div>
     </div>
-</div>
 </body>
 </html>
